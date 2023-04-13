@@ -31,6 +31,7 @@ public class MyArrayListImpl<T> implements MyArrayList<T> {
 
     /**
      * Перегруженный конструктор. Используйте его, если знаете начальное количество элементов в списке
+     * @param capacity начальное количество элементов в списке
      */
     public MyArrayListImpl(int capacity) {
         if (capacity <= 0) {
@@ -42,6 +43,7 @@ public class MyArrayListImpl<T> implements MyArrayList<T> {
 
     /**
      * Метод позволяющий получить количество элементов в списке
+     * @return int размер списка
      */
     @Override
     public int size() {
@@ -50,6 +52,8 @@ public class MyArrayListImpl<T> implements MyArrayList<T> {
 
     /**
      * Метод позваляющий добавлять новый элемент в конец списка
+     * @param t объект списка
+     * @return boolean
      */
     @Override
     public boolean add(T t) {
@@ -61,6 +65,8 @@ public class MyArrayListImpl<T> implements MyArrayList<T> {
 
     /**
      * Перегруженный метод. Позваляющий добавлять новый элемент по индексу
+     * @param index индекс списка
+     * @param t объект списка
      */
     @Override
     public boolean add(int index, T t) {
@@ -75,6 +81,8 @@ public class MyArrayListImpl<T> implements MyArrayList<T> {
 
     /**
      * Метод позваляющий обновить существующий элемент
+     * @param index индекс списка
+     * @param t объект списка
      */
     @Override
     public void set(int index, T t) {
@@ -84,6 +92,7 @@ public class MyArrayListImpl<T> implements MyArrayList<T> {
 
     /**
      * Метод позваляющий получить существующий элемент
+     * @param index индекс списка
      */
     @Override
     public T get(int index) {
@@ -94,6 +103,7 @@ public class MyArrayListImpl<T> implements MyArrayList<T> {
 
     /**
      * Метод позваляющий удалить существующий элемент по индексу
+     * @param index индекс списка
      */
     @Override
     public void remove(int index) {
@@ -106,6 +116,7 @@ public class MyArrayListImpl<T> implements MyArrayList<T> {
 
     /**
      * Метод позваляющий удалить существующий элемент по элементу
+     * @param t объект списка
      */
     @Override
     public void remove(T t) {
