@@ -18,6 +18,7 @@ public class Main {
         myArrayList.add("test2");
         myArrayList.add("test1");
         myArrayList.add("test0");
+        myArrayList.add(1, "test10");
 
         for (int i = 0; i < myArrayList.size(); i++) {
             System.out.println(myArrayList.get(i));
