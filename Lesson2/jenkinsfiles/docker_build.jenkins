@@ -1,0 +1,30 @@
+properties([disableConcurrentBuilds()])
+
+pipeline {
+    agent {
+        label 'master'
+        }
+    triggers { pollSCM('* * * * *') }
+    options {
+        buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
+        timestamps()
+    }
+    stages {
+        stage("create docker image") {
+            steps {
+                echo " ============== start building image =================="
+                dir ('docker') {
+                	sh 'docker build -t test:latest . '
+                }
+            }
+        }
+        stage("docker start image") {
+            steps {
+                echo " ============== start image =================="
+                sh '''
+                docker run -d --name test:latest
+                '''
+            }
+        }
+    }
+}
